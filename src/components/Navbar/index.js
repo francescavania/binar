@@ -1,64 +1,45 @@
-import "./style.css"
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import { Link } from "react-router-dom";
+import LogoNavbar from "../../assets/logo.png";
+import "./style.css";
 
-const Navbar = () => {
+const NavBar = () => {
   return (
-    <>
-      <ul class="nav nav-tabs" id="navId">
-        <li class="nav-item">
-          <a href="#tab1Id" class="nav-link active styCustomColor">
-            Active
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            data-toggle="dropdown"
-            href="#s"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-            style={{color: "blue"}}
-          >
-            Dropdown
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#tab2Id">
-              Action
-            </a>
-            <a class="dropdown-item" href="#tab3Id">
-              Another action
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#tab4Id">
-              Action
-            </a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="#tab5Id" class="nav-link">
-            Another link
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="##" class="nav-link disabled">
-            Disabled
-          </a>
-        </li>
-      </ul>
-
-      <div class="tab-content">
-        <div
-          class="tab-pane fade show active"
-          id="tab1Id"
-          role="tabpanel"
-        ></div>
-        <div class="tab-pane fade" id="tab2Id" role="tabpanel"></div>
-        <div class="tab-pane fade" id="tab3Id" role="tabpanel"></div>
-        <div class="tab-pane fade" id="tab4Id" role="tabpanel"></div>
-        <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
-      </div>
-    </>
+    <Navbar className="navbar-section" expand="lg">
+      <Container>
+        <Link to={`/`}>
+          <Navbar.Brand>
+            <img src={LogoNavbar} alt="logo" />
+          </Navbar.Brand>
+        </Link>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Offcanvas id="basic-navbar-nav" placement="end">
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title>BCR</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <Nav className="navbar-item">
+              <Nav.Link href="#ourservices" className="navbar-item-link">
+                Our Services
+              </Nav.Link>
+              <Nav.Link href="#whyus" className="navbar-item-link">
+                Why Us
+              </Nav.Link>
+              <Nav.Link href="#testimonial" className="navbar-item-link">
+                Testimonial
+              </Nav.Link>
+              <Nav.Link href="#faq" className="navbar-item-link">
+                FAQ
+              </Nav.Link>
+            </Nav>
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar
+export default NavBar;

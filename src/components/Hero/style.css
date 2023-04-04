@@ -1,0 +1,49 @@
+.hero{
+    min-height: 25vh;
+    background-color: #F1F3FF;
+}
+
+.hero-content{
+    display: flex;
+    margin-left: 10vw;
+    justify-content: space-between;
+    padding-top: 2%;
+    align-items: center;
+    gap: 16px;
+}
+
+.hero-description{
+    max-width: 560px;
+}
+
+.hero-description p, .hero-button {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.hero-description h1{
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 54px;
+}
+
+@media only screen and (max-width:430px){
+    .hero-content {
+        flex-direction: column;
+        margin-bottom: 24px;
+        width: 100%;
+        margin-left: 0px;
+    }
+    
+    .hero-description{
+        margin: 0 5vw;
+    }
+
+    .hero-content img {
+        display: flex;
+        width: 97%;
+        height: fit-content;
+        margin-left: auto;
+    }
+}
